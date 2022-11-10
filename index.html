@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet shop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"></link>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
     </div>
   </nav>
 
-  <div class="container text-center bg-dark text-light border-1px-light">
+  <div class="container text-center bg-dark text-light border-1">
     <h2>We offer</2>
       <div class="row row-cols-2">
         <div class="col">toys</div>
@@ -63,35 +64,43 @@
       </div>
     </div>
   </div>
-
+  <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+    <div class="d-flex">
+      <div class="toast-body">
+       do you want some toast messages?
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+        aria-label="Close"></button>
+    </div>
+  </div>
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class="active"
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class=""
         aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" class="active"
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" class=""
         aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" class=""
         aria-label="Slide 4"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="300">
-        <img src="img/OIP.jfif" class="d-block w-50" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="img/OIP2.jfif" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block text-light">
+          <h5>First happy cat</h5>
+          <p>This is our first cat-customer</p>
         </div>
       </div>
-      <div class="carousel-item-active" data-bs-interval="300">
-        <img src="img/stáhnout.jfif" class="d-sm-block w-50" alt="...">
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="img/OIP3.jfif" class="d-sm-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Some representative placeholder content for the second slide.</p>
         </div>
       </div>
-      <div class="carousel-item-active" data-bs-interval="300">
-        <img src="img/OIP (1).jfif" class="d-block w-50" alt="...">
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="img/OIP4.jfif" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Some representative placeholder content for the third slide.</p>
@@ -220,7 +229,12 @@
 
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  const toastSelector = document.getElementById('liveToast')
+  const toast = new bootstrap.Toast(toastSelector)
+  toast.show()
+</script>
 
 </html>
